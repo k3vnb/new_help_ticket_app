@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterTicketList: [],
+      masterTicketList: {},
       selectedTicket: null
     };
     this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
@@ -63,6 +63,14 @@ class App extends React.Component {
   this.setState({masterTicketList: newMasterTicketList});
 }
   handleAddingNewTicketToList(newTicket){
+    // let newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
+    //   [newTicket.id]: newTicket
+    // });
+    // newMasterTicketList[]
+
+
+    //START HERE 
+    // BEFORE THE REFACTOR
     let newMasterTicketList = this.state.masterTicketList.slice();
     newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true)
     newMasterTicketList.push(newTicket);
